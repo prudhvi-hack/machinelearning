@@ -5,7 +5,7 @@ function p = predict(theta, X)
 %   threshold at 0.5 (i.e., if sigmoid(theta'*x) >= 0.5, predict 1)
 
 m = size(X, 1); % Number of training examples
-
+n=size(X,2)-1;
 % You need to return the following variables correctly
 p = zeros(m, 1);
 
@@ -15,13 +15,16 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
-
-
-
-
-
+p=sigmoid(X*theta);
 
 % =========================================================================
 
+for i=1:m
+  
+  if p(i)>=0.5
+    p(i)=1;
+  else
+    p(i)=0;
+  end
 
 end

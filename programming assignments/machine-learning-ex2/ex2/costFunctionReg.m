@@ -19,8 +19,12 @@ grad = zeros(size(theta));
 
 
 
-
-
+  [temp1,temp2]=costFunction(theta,X,y);
+  
+  
+  J=temp1+(lambda/(2*m))*((theta(2:size(theta),:))'*(theta(2:size(theta),:)));
+  grad=temp2+(lambda/m)*(theta);
+  grad(1)=temp2(1);
 
 % =============================================================
 
