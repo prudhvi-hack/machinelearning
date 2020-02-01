@@ -15,7 +15,9 @@ centroids = zeros(K, size(X, 2));
 
 
 
-
+for i=1:K
+  z=int32(rand(1,1)*length(X));
+  centroids(i:i,:)=X(z:z,:);
 
 
 
